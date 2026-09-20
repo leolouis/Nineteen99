@@ -1,0 +1,38 @@
+name: Deploy Nineteen99 UI to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: 📦 Install Flutter Dependencies
+        run: |
+          cd frontend_flutter
+          flutter pub get
+
+      - name: 🏗️ Compile Flutter Web App
+        run: |
+          cd frontend_flutter
+          flutter build web --release --base-href /${{ github.event.repository.name }}/
+
+      - name: 🚀 Deploy Static Files to gh-pages Branch
+        uses: Peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend_flutter/build/web
+          
