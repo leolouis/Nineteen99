@@ -22,17 +22,17 @@ jobs:
 
       - name: 📦 Install Flutter Dependencies
         run: |
-          cd frontend_flutter
+          cd Nineteen99-main/frontend_flutter
           flutter pub get
 
       - name: 🏗️ Compile Flutter Web App
         run: |
-          cd frontend_flutter
+          cd Nineteen99-main/frontend_flutter
           flutter build web --release --base-href /${{ github.event.repository.name }}/
 
       - name: 🚀 Deploy Static Files to gh-pages Branch
         uses: Peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./frontend_flutter/build/web
+          publish_dir: ./Nineteen99-main/frontend_flutter/build/web
           
