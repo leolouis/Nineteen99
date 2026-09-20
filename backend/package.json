@@ -1,0 +1,16 @@
+{
+  "name": "nineteen99-backend",
+  "version": "1.0.0",
+  "description": "Randomized UPI Splitting Engine for Nineteen99 Framework",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "author": "Nineteen99 Developer",
+  "license": "MIT"
+}
