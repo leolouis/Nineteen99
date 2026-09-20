@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  nineteen99-engine:
+    container_name: nineteen99_backend_core
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+    restart: always
+    
