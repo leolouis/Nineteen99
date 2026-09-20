@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://android.com">
+    
+    <!-- SILICON VALLEY SPEC: NATIVE HARDWARE ACCELERATION PERMISSIONS -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:label="nineteen99"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher">
+        
+        <!-- Leave the rest of your existing generated activity code exactly as it is -->
+        
+    </application>
+</manifest>
